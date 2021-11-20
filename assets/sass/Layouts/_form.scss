@@ -1,0 +1,151 @@
+.wavyForm-content {
+    @include layout-xl();
+    padding-top: 4rem;
+
+    .image-container {
+        padding: 0 40px 0 20px;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .form-container {
+        padding: 0 0 0 20px;
+        text-align: center;
+
+        .form-content {
+            padding: 40px 25px 75px;
+            border-radius: 10px;
+            background-color: #fff;
+            -webkit-box-shadow: 0 30px 30px -10px #00000033;
+            box-shadow: 0 30px 30px -10px #00000033;
+        }
+
+        form.row {
+            margin-left: 0;
+            margin-right: 0;
+            div {
+                position: relative;
+                padding: 0;
+            }
+        }
+
+        h2.main-title {
+            @include styleText(2.5rem, 700, $color-black-2);
+        }
+
+        input#txtName,
+        input#txtEmail,
+        select {
+            border-radius: 50px;
+            border: solid 1px;
+        }
+
+        textarea {
+            border-radius: 20px;
+            border: solid 1px;
+            width: 100%;
+        }
+
+        input#txtName,
+        input#txtEmail {
+            width: 100%;
+            @include styleText(0.8rem, normal, $color-black-1);
+            padding: 1em 1em 1em 3.5em;
+            height: 3.7em;
+            margin-bottom: 1rem;
+        }
+
+        input#txtName {
+            margin-right: 15px;
+        }
+
+        select {
+            @include styleText(0.8rem, normal, $color-black-1);
+            padding: 1em 1em 1em 3em;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        textarea {
+            @include styleText(0.8rem, normal, $color-black-1);
+            padding: 1em 1em 1em 3.5em;
+            height: 90px;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        input[type="submit"] {
+            max-width: 150px;
+            margin-top: 2rem;
+            height: 4em;
+            line-height: 3.1rem;
+            border-radius: 50px;
+            &:hover {
+                @include buttonHover($color-purple-1, $color-white-1);
+            }
+        }
+
+        form.row {
+            div {
+                position: relative;
+                i {
+                    color: $color-purple-1;
+                    position: absolute;
+                    font-size: 1rem;
+                    top: 0.9em;
+                    left: 1em;
+                    line-height: 1;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        input#txtName,
+        input#txtEmail,
+        select,
+        textarea {
+            animation: all 500ms ease;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+
+            &:focus {
+                box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.3);
+            }
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+    }
+}
+
+.wavyForm {
+    position: relative;
+
+    .bottom-img {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+    }
+}
+
+//Responsive
+@include responsive("large-down") {
+    .wavyForm-content {
+        @include layout-md-lg();
+        padding-top: 4rem;
+
+        .form-container {
+            text-align: left;
+        }
+    }
+}
+
+@include responsive("small-down") {
+    .wavyForm-content {
+        @include layout-sm();
+        padding-top: 4rem;
+    }
+}

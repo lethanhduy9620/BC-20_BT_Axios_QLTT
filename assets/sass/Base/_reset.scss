@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+}
+
+@include responsive("extra-large-down") {
+    html,
+    body {
+        font-size: 14px;
+    }
+}
+
+//Text
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    padding: 0 0 0.4em;
+    line-height: 1.2;
+    font-weight: 900;
+}
+
+a {
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+input[type="submit"] {
+    outline: none;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    font-weight: 600;
+    line-height: 1;
+    border: none;
+    background: transparent;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    transition: all 300ms ease;
+    -webkit-box-shadow: 0 0 0 1px #b61984 inset;
+    box-shadow: 0 0 0 1px #b61984 inset;
+    background: #b61984;
+    color: #fff;
+}

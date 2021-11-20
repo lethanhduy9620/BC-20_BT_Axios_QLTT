@@ -1,0 +1,62 @@
+@mixin styleText($fs, $fw, $color) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+}
+
+@mixin styleButton($bg, $pd-y, $pd-x, $bd, $radius) {
+    background: $bg;
+    padding: $pd-y $pd-x;
+    border: $bd;
+    border-radius: $radius;
+}
+
+@mixin styleButtonHover($bg, $bd-color, $color) {
+    background: $bg;
+    border-color: $bd-color;
+    color: $color;
+}
+
+@mixin layout-xl() {
+    width: 1260px;
+    max-width: calc(100% - 60px);
+    padding: 0 30px;
+    margin: auto;
+}
+
+@mixin layout-md-lg() {
+    width: 100%;
+    max-width: calc(100% - 40px);
+    padding: 0 20px;
+    margin: auto;
+}
+
+@mixin layout-sm() {
+    width: 100%;
+    max-width: calc(100% - 20px);
+    padding: 0 10px;
+    margin: auto;
+}
+
+@mixin buttonHover($text-color,$bg-color){
+    color: $text-color;
+    box-shadow: 0 0 0 1px $text-color inset;
+    background-color: $bg-color;
+}
+
+
+//break points
+@mixin responsive($screen) {
+    @if (map-has-key($map: $breakpoints, $key: $screen)) {
+        $value: map-get(
+            $map: $breakpoints,
+            $key: $screen,
+        );
+        //Desktop first
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    } @else {
+        @warn "`{$screen}` isn't in breakpoint";
+    }
+}

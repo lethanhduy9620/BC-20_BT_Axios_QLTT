@@ -1,0 +1,99 @@
+.wavyCards {
+    position: relative;
+
+    .wavyCards-background {
+        width: 100%;
+        height: 100%;
+        background: #dcd1f0;
+    }
+
+    .bottom-img {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.wavyCards-content {
+    position: relative;
+    z-index: 2;
+    @include layout-xl();
+
+    .card-container {
+        row-gap: 40px;
+        margin: 0;
+    }
+
+    .card-item {
+        padding: 0 20px;
+
+        .card-background {
+            background-color: white;
+            border-radius: 10px;
+            min-height: 100%;
+            transition: all 300ms ease-in-out;
+        }
+
+        .img-container {
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px 10px 0px 0px;
+                transition: transform 650ms ease-in-out, filter 650ms ease-in-out;
+            }
+        }
+
+        .card-content {
+            padding: 20px 30px 35px;
+            text-align: center;
+
+            h6.sub-title {
+                @include styleText(0.75rem, 600, $color-purple-1);
+                padding: 0;
+                margin: 0;
+                margin-bottom: 0.63rem;
+                text-transform: uppercase;
+            }
+
+            h2.main-title {
+                @include styleText(1.55rem, 700, $color-black-1);
+                padding: 0;
+                margin: 0;
+                margin-bottom: 15px;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+
+        &:hover {
+            .card-background {
+                box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
+            }
+
+            .img-container {
+                img {
+                    transform: scale3d(1.05, 1.05, 1.05);
+                }
+            }
+        }
+    }
+}
+
+@include responsive("large-down") {
+    .wavyCards-content {
+        @include layout-md-lg();
+    }
+}
+
+@include responsive("small-down") {
+    .wavyCards-content {
+        @include layout-sm();
+    }
+}

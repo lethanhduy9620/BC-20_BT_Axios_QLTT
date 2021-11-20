@@ -1,0 +1,84 @@
+.wavyBanner-content {
+    @include layout-xl();
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .image-container {
+        padding: 0;
+        img {
+            max-width: 580px;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        h6.sub-title {
+            @include styleText(1.1rem, 600, $color-purple-1);
+            padding: 0;
+            margin: 0;
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+        }
+        h2.main-title {
+            @include styleText(3.8rem, 700, $color-black-1);
+        }
+    }
+}
+
+.wavyBanner {
+    position: relative;
+
+    .bottom-img {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+//Responsive
+@include responsive("large-down") {
+    .wavyBanner-content {
+        @include layout-md-lg();
+        padding-top: 48px;
+        padding-bottom: 48px;
+
+        .content-container {
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+
+            h6.sub-title {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            h2.main-title {
+                font-size: 3.15rem;
+            }
+        }
+    }
+}
+
+@include responsive("medium-down") {
+    .wavyBanner-content {
+        @include layout-md-lg();
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
+
+@include responsive("small-down") {
+    .wavyBanner-content {
+        @include layout-sm();
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
